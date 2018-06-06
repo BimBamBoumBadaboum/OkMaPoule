@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Dofus\D2O\IO\**" />
+    <Compile Remove="Managers\Effects\**" />
+    <Compile Remove="Protocol\Data\effects\custom\**" />
+    <EmbeddedResource Remove="Dofus\D2O\IO\**" />
+    <EmbeddedResource Remove="Managers\Effects\**" />
+    <EmbeddedResource Remove="Protocol\Data\effects\custom\**" />
+    <None Remove="Dofus\D2O\IO\**" />
+    <None Remove="Managers\Effects\**" />
+    <None Remove="Protocol\Data\effects\custom\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Managers\Effects\Effects.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="0.36.1" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="Dapper.Contrib" Version="1.50.4" />
+    <PackageReference Include="NLog" Version="4.5.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\Items\Custom\" />
+    <Folder Include="Protocol\Data\jobs\" />
+    <Folder Include="Protocol\Data\livingObjects\" />
+    <Folder Include="Protocol\Data\misc\" />
+    <Folder Include="Protocol\Custom\" />
+  </ItemGroup>
+</Project>
